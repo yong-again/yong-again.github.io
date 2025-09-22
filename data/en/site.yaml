@@ -5,9 +5,5 @@ copyright: © 2025 Copyright.
 description: Portfolio and personal blog of YongJung Lee.
 
 # Change Navigation bar title
-navBarTitle: "Yong's Portfolio"
+navBarTitle: "Yong's Blog"
 
-openGraph:
-  title: Yong's Blog
-  type: website
-  url: https://hugo-toha.github.io

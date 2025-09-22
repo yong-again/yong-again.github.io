@@ -1,0 +1,71 @@
+section:
+  name: Experiences # Titre de la section (par défaut: "" )
+  id: experiences # url id/slug of section *Required*
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your experiences
+experiences:
+- company:
+    name: MINTIT Co.
+    url: "https://www.mintit.co.kr/introduce/aboutMintit"
+    location: Mapo-gu, Seoul, South Korea
+    #logo: /images/experiences/company.png
+    #darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: Mintit is an ICT platform company that specializes in the trade of used smartphones through AI-powered unmanned devices. The company acquires pre-owned phones from customers via kiosks installed in approximately 4,000 locations nationwide, including large-scale supermarkets and mobile communication agencies. Mintit provides a system that utilizes an AI model to automatically diagnose the external condition of the collected devices.
+  positions:
+  - designation: AI Engineer
+    start: March 2024
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: Dec 2024
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Design and develop XYZ tool for ABC task
+    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
+    - Lead backend team.
+
+- company:
+    name: Beaverworks Co.
+    url: "https://beaverstorelab.com/brand/"
+    location: Gangnam-gu, Seoul, South Korea
+    #logo: /images/experiences/company.png
+    #darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: BeaverWorks is a retail-focused IT solutions company that develops and supplies its own offline kiosks and POS systems. The company specializes in applying various AI technologies to commercial environments, ranging from dedicated kiosk software to customer recognition models and recommendation system solutions.
+  positions:
+  - designation: AI Engineer, Data Scientist
+    start: March 2023
+    end: March 2024
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Developed and deployed real-time computer vision models on kiosk edge devices for customer demographic analysis.
+    - Designed and implemented a product recommendation engine for POS systems, improving cross-sell opportunities.
+    - Built and maintained automated data pipelines to process sales and customer data from over 4,000 nationwide kiosks.
+    - Managed the end-to-end machine learning lifecycle from model training and deployment to monitoring in a production environment.
+    - Collaborated with software engineers to integrate AI models into the core kiosk application via REST APIs.
+
+- company:
+    name: Inzisoft Co.
+    url: "http://inzisoft.com/c_company/company2022/"
+    location: Gangnam-gu, Seoul, South Korea
+    #logo: /images/experiences/company.png
+    #darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+  positions:
+    - designation: RPA Operator
+      start: July 2021
+      # don't provide end date if you are currently working there. It will be replaced by "Present"
+      end: April 2022
+      # give some points about what was your responsibilities at the company.
+      responsibilities:
+        - Design and develop XYZ tool for ABC task
+        - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
+        - Lead backend team.
+
+
