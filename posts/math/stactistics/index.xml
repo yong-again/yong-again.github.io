@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Statistics on Yong's Blog</title><link>https://yong-again.github.io/posts/math/stactistics/</link><description>Recent content in Statistics on Yong's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://yong-again.github.io/posts/math/stactistics/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Basic Concepts of Statistics</title><link>https://yong-again.github.io/posts/math/stactistics/temp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yong-again.github.io/posts/math/stactistics/temp/</guid><description>&lt;aside&gt;
+💡 수치형 특성이 두 값의 범위에 안에 놓이도록 스케일$^{(scale)}$을 바꿔야 합니다.
+&lt;/aside&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;해결&lt;/code&gt;&lt;/strong&gt; 사이킷런의 MinMaxScaler를 사용해 특성 배열의 스케일을 조정합니다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Import Library&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; numpy &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; sklearn &lt;span style="color:#f92672"&gt;import&lt;/span&gt; preprocessing
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Make Feature&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;feature &lt;span style="color:#f92672"&gt;=&lt;/span&gt; np&lt;span style="color:#f92672"&gt;.&lt;/span&gt;array([[&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;500.5&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;100.1&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#ae81ff"&gt;100.1&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#ae81ff"&gt;900.9&lt;/span&gt;]])
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Make Scaler Object&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;minmax_scale &lt;span style="color:#f92672"&gt;=&lt;/span&gt; preprocessing&lt;span style="color:#f92672"&gt;.&lt;/span&gt;MinMaxScaler(feature_range&lt;span style="color:#f92672"&gt;=&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Transfrom Feature sacle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scaled_feature &lt;span style="color:#f92672"&gt;=&lt;/span&gt; minmax_scale&lt;span style="color:#f92672"&gt;.&lt;/span&gt;fit_transform(feature)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Print Feature&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scaled_Feature
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;array([[&lt;span style="color:#ae81ff"&gt;0.&lt;/span&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#ae81ff"&gt;0.28571429&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#ae81ff"&gt;0.35714286&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#ae81ff"&gt;0.42857143&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#ae81ff"&gt;1.&lt;/span&gt; ]])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;설명&lt;/code&gt;&lt;/strong&gt; 최소-최대 스케일링$^{(min-max ; scaling)}$은 특성의 최솟값과 최댓값을 활용하여 일정범위 안으로 값을 조정$^{(보통 ; 0에서1, ; -1에서 1 사이)}$&lt;/p&gt;</description></item></channel></rss>
