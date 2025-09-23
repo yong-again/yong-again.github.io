@@ -16,50 +16,37 @@ buttons:
   filter: "professional"
 - name: Academic
   filter: "academic"
-- name: Hobby
-  filter: "hobby"
 
 # your projects
 projects:
-- name: Kubernetes
+- name: Used car image classification
   #logo: /images/sections/projects/kubernetes.png
-  role: Contributor
-  timeline: "March 2018 - Present"
-  repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  role: Developer
+  timeline: "May 2025 - jun 2025"
+  repo: https://github.com/yong-again/img_clf # If your project is a public repo on GitHub, then provide this link. it will show star count.
   #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: Production-Grade Container Scheduling and Management.
-  tags: ["professional", "kubernetes", "cloud"]
+  summary: A used car image classification model that classifies car images.
+  tags: ["academic", "pytorch", "classification", "ViT"]
 
-- name: Tensorflow
+- name: Uniformed Student-Teacher Anomaly Detection
   #logo: /images/sections/projects/tensorflow.png
   role: Developer
-  timeline: "Jun 2018 - Present"
-  repo: https://github.com/tensorflow/tensorflow
+  timeline: "Aug 2025 - Sep 2025"
+  repo: https://github.com/yong-again/student-teacher
   #url: ""
-  summary: An Open Source Machine Learning Framework for Everyone.
-  tags: ["professional", "machine-learning"]
+  summary: Implemented a student-teacher based anomaly detection model using PyTorch. The model was trained on the MVTec AD dataset and achieved state-of-the-art performance on several categories.
+  tags: ["academic", "anomaly detection", "pytorch"]
 
-- name: A sample academic paper
-  #role: Team Lead
-  timeline: "Jan 2017 - Nov 2017"
-  url: "https://www.example.com"
-  summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius reprehenderit animi suscipit autem eligendi esse amet aliquid error eum. Accusantium distinctio soluta aliquid quas placeat modi suscipit eligendi nisi.
-  tags: ["academic","iot"]
+- name: A simple Baseline for image classification
+  timeline: "Aug 2025 - Aug 2025"
+  repo: https://github.com/yong-again/clf_demo
+  summary: A simple baseline for image classification using PyTorch.
+  tags: ["academic", "pytorch", "classification"]
 
-- name: Nocode
+- name: Implementation Seq2seq model using numpy
+  timeline: "Aplril 2022 - May 2022"
   #logo: /images/sections/projects/no-code.png
   role: Nothing
-  timeline: "Oct 2019 - Dec 2019"
-  repo: https://github.com/kelseyhightower/nocode
-  #url: ""
-  summary: The best way to write secure and reliable applications. Write nothing; deploy nowhere.
-  tags: ["hobby", "fun"]
-
-- name: Toha
-  #logo: /images/sections/projects/toha.png
-  image: /images/sections/projects/toha_website.png
-  role: Owner
-  timeline: "Jun 2019 - Present"
-  repo: https://github.com/hossainemruz/toha
-  summary: A Hugo theme for personal portfolio.
-  tags: ["hobby","hugo","theme","professional"]
+  repo: https://github.com/yong-again/aipaper
+  summary: Implemented a Seq2seq model using numpy in university course. The model was trained on the English to French translation task.
+  tags: ["academic", "NLP", "numpy"]

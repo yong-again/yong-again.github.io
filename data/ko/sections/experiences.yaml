@@ -10,83 +10,65 @@ section:
 # Your experiences
 experiences:
 - company:
-    name: Example Co.
-    url: "https://www.example.com"
-    location: Dhaka Branch
+    name: MINTIT Co.
+    url: "https://www.mintit.co.kr/introduce/aboutMintit"
+    location: Mapo-gu, Seoul, South Korea
     #logo: /images/experiences/company.png
     #darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: Mintit is an ICT platform company that specializes in the trade of used smartphones through AI-powered unmanned devices. The company acquires pre-owned phones from customers via kiosks installed in approximately 4,000 locations nationwide, including large-scale supermarkets and mobile communication agencies. Mintit provides a system that utilizes an AI model to automatically diagnose the external condition of the collected devices.
   positions:
-  - designation: Senior Software Engineer
-    start: Nov 2019
+  - designation: AI Engineer
+    start: March 2024
     # don't provide end date if you are currently working there. It will be replaced by "Present"
-    # end: Dec 2020
+    end: Dec 2024
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
+      - Led the development of an AI-powered defect detection system for automated used-phone inspection.
+      - Designed a multi-model pipeline using U-Net, ResNet, and YOLO to classify various types of damage.
+      - Resolved a critical data leakage issue with a custom validation logic, ensuring model reliability.
+      - Boosted display defect detection rate from 53% to 85% by implementing a novel image preprocessing technique (CLAHE).
+      - Enhanced model accuracy by refining a 50K+ image dataset and establishing a robust data labeling framework.
 
-  - designation: Junior Software Engineer
-    start: Nov 2017
-    end: Oct 2019
-    responsibilities:
-    - Implement and test xyz feature for abc tool.
-    - Support client for abc tool.
-    - Learn k,d,w technology for xyz.
 - company:
-    name: Example Co.
-    url: "https://www.example.com"
-    location: Dhaka Branch
+    name: Beaverworks Co.
+    url: "https://beaverstorelab.com/brand/"
+    location: Gangnam-gu, Seoul, South Korea
     #logo: /images/experiences/company.png
     #darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: BeaverWorks is a retail-focused IT solutions company that develops and supplies its own offline kiosks and POS systems. The company specializes in applying various AI technologies to commercial environments, ranging from dedicated kiosk software to customer recognition models and recommendation system solutions.
   positions:
-  - designation: Senior Software Engineer
-    start: Nov 2019
+  - designation: AI Engineer/Data Analyst
+    start: March 2023
+    end: March 2024
     # don't provide end date if you are currently working there. It will be replaced by "Present"
-    # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
-
-  - designation: Junior Software Engineer
-    start: Nov 2017
-    end: Oct 2019
-    responsibilities:
-    - Implement and test xyz feature for abc tool.
-    - Support client for abc tool.
-    - Learn k,d,w technology for xyz.
+    - Developed on-device CV models for customer demographic analysis.
+    - Built a product recommendation engine for POS and kiosk systems.
+    - Engineered data pipelines for thousands of nationwide kiosks.
+    - Managed the end-to-end ML model lifecycle in a production environment.
+    - Integrated AI models into core applications via FastAPI.
 
 - company:
-    name: Example Co.
-    url: "https://www.example.com"
-    location: Dhaka Branch
+    name: Inzisoft Co.
+    url: "http://inzisoft.com/c_company/company2022/"
+    location: Gangnam-gu, Seoul, South Korea
     #logo: /images/experiences/company.png
     #darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: Inzisoft is an IT company that provides AI-powered solutions for digital document management and business process automation. Leveraging key technologies like OCR and RPA, they help organizations digitize paperwork, extract valuable data, and streamline workflows.
   positions:
-    - designation: Senior Software Engineer
-      start: Nov 2019
+    - designation: RPA Operator
+      start: July 2021
       # don't provide end date if you are currently working there. It will be replaced by "Present"
-      # end: Dec 2020
+      end: April 2022
       # give some points about what was your responsibilities at the company.
       responsibilities:
-        - Design and develop XYZ tool for ABC task
-        - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-        - Lead backend team.
-
-    - designation: Junior Software Engineer
-      start: Nov 2017
-      end: Oct 2019
-      responsibilities:
-        - Implement and test xyz feature for abc tool.
-        - Support client for abc tool.
-        - Learn k,d,w technology for xyz.
+        - Operated RPA systems to automate repetitive tasks, improving efficiency and accuracy.
+        - Monitored and troubleshooted RPA workflows to ensure smooth operation.
+        - Collaborated with cross-functional teams to identify automation opportunities.
+        - Assisted in the development and testing of new RPA processes.
 
 

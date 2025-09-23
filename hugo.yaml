@@ -74,6 +74,46 @@ params:
     darkMode:
       enable: true
 
+    # Enable this to create mathematic expressions using `$$` blocks
+    math:
+      enable: true
+      services:
+        # https://katex.org/docs/autorender.html#api for more configurations
+        katex:
+          delimiters:
+            - left: $$
+              right: $$
+              display: true
+            - left: \\[
+              right: \\]
+              display: true
+            - left: $
+              right: $
+              display: false
+            - left: \\(
+              right: \\)
+              display: false
+
+    syntaxHighlight:
+      enable: true
+      services:
+        hljs:
+          # see: https://highlightjs.readthedocs.io/en/latest/api.html#configure
+          noHighlightRe: /^no-highlight$/i
+
+    copyCodeButton:
+      enable: true
+
+    pagination:
+      maxPostsPerPage: 12
+
+    # Enable reading time support in post cards and in post pages
+    readingTime:
+      enable: True
+
+    topNavbar:
+      maxVisibleSections: 8
+
   # Configure footer
   footer:
     enable: true

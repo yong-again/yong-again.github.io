@@ -24,9 +24,11 @@ experiences:
     end: Dec 2024
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
+      - Led the development of an AI-powered defect detection system for automated used-phone inspection.
+      - Designed a multi-model pipeline using U-Net, ResNet, and YOLO to classify various types of damage.
+      - Resolved a critical data leakage issue with a custom validation logic, ensuring model reliability.
+      - Boosted display defect detection rate from 53% to 85% by implementing a novel image preprocessing technique (CLAHE).
+      - Enhanced model accuracy by refining a 50K+ image dataset and establishing a robust data labeling framework.
 
 - company:
     name: Beaverworks Co.
@@ -37,17 +39,17 @@ experiences:
     # company overview
     overview: BeaverWorks is a retail-focused IT solutions company that develops and supplies its own offline kiosks and POS systems. The company specializes in applying various AI technologies to commercial environments, ranging from dedicated kiosk software to customer recognition models and recommendation system solutions.
   positions:
-  - designation: AI Engineer, Data Scientist
+  - designation: AI Engineer/Data Analyst
     start: March 2023
     end: March 2024
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Developed and deployed real-time computer vision models on kiosk edge devices for customer demographic analysis.
-    - Designed and implemented a product recommendation engine for POS systems, improving cross-sell opportunities.
-    - Built and maintained automated data pipelines to process sales and customer data from over 4,000 nationwide kiosks.
-    - Managed the end-to-end machine learning lifecycle from model training and deployment to monitoring in a production environment.
-    - Collaborated with software engineers to integrate AI models into the core kiosk application via REST APIs.
+    - Developed on-device CV models for customer demographic analysis.
+    - Built a product recommendation engine for POS and kiosk systems.
+    - Engineered data pipelines for thousands of nationwide kiosks.
+    - Managed the end-to-end ML model lifecycle in a production environment.
+    - Integrated AI models into core applications via FastAPI.
 
 - company:
     name: Inzisoft Co.
@@ -56,7 +58,7 @@ experiences:
     #logo: /images/experiences/company.png
     #darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: Inzisoft is an IT company that provides AI-powered solutions for digital document management and business process automation. Leveraging key technologies like OCR and RPA, they help organizations digitize paperwork, extract valuable data, and streamline workflows.
   positions:
     - designation: RPA Operator
       start: July 2021
@@ -64,8 +66,9 @@ experiences:
       end: April 2022
       # give some points about what was your responsibilities at the company.
       responsibilities:
-        - Design and develop XYZ tool for ABC task
-        - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-        - Lead backend team.
+        - Operated RPA systems to automate repetitive tasks, improving efficiency and accuracy.
+        - Monitored and troubleshooted RPA workflows to ensure smooth operation.
+        - Collaborated with cross-functional teams to identify automation opportunities.
+        - Assisted in the development and testing of new RPA processes.
 
 

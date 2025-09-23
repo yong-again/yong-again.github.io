@@ -8,6 +8,7 @@ section:
   # Can optionally hide the title in sections
   # hideTitle: true
 
+# filter buttons
 buttons:
 - name: All
   filter: "all"
@@ -15,15 +16,37 @@ buttons:
   filter: "professional"
 - name: Academic
   filter: "academic"
-- name: Hobby
-  filter: "hobby"
 
+# your projects
 projects:
-- name: Kubernetes
-  #logo: images/projects/kubernetes.png
-  role: Contributor
-  timeline: "March 2018 - Present"
-  repo: https://github.com/kubernetes/kubernetes
-  # url: ""
-  summary: Production-Grade Container Scheduling and Management .
-  tags: ["professional", "kubernetes", "cloud"]
+- name: Used car image classification
+  #logo: /images/sections/projects/kubernetes.png
+  role: Developer
+  timeline: "May 2025 - jun 2025"
+  repo: https://github.com/yong-again/img_clf # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: A used car image classification model that classifies car images.
+  tags: ["academic", "pytorch", "classification", "ViT"]
+
+- name: Uniformed Student-Teacher Anomaly Detection
+  #logo: /images/sections/projects/tensorflow.png
+  role: Developer
+  timeline: "Aug 2025 - Sep 2025"
+  repo: https://github.com/yong-again/student-teacher
+  #url: ""
+  summary: Implemented a student-teacher based anomaly detection model using PyTorch. The model was trained on the MVTec AD dataset and achieved state-of-the-art performance on several categories.
+  tags: ["academic", "anomaly detection", "pytorch"]
+
+- name: A simple Baseline for image classification
+  timeline: "Aug 2025 - Aug 2025"
+  repo: https://github.com/yong-again/clf_demo
+  summary: A simple baseline for image classification using PyTorch.
+  tags: ["academic", "pytorch", "classification"]
+
+- name: Implementation Seq2seq model using numpy
+  timeline: "Aplril 2022 - May 2022"
+  #logo: /images/sections/projects/no-code.png
+  role: Nothing
+  repo: https://github.com/yong-again/aipaper
+  summary: Implemented a Seq2seq model using numpy in university course. The model was trained on the English to French translation task.
+  tags: ["academic", "NLP", "numpy"]
