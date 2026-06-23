@@ -1,0 +1,36 @@
+baseURL: https://yong-again.github.io/
+languageCode: ko-kr
+title: "Yong's Blog"
+defaultContentLanguage: ko
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+    title: "Yong's Blog"
+  ko:
+    languageName: 한국어
+    weight: 2
+    title: "Yong's Blog"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: github-dark
+    noClasses: true
+    lineNos: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+
+enableEmoji: true
+pagination:
+  pagerSize: 9
+
+params:
+  description: Portfolio and personal blog of YongJung Lee.
+  copyright: "© 2025 Yong Jung Lee"
+  accent: "#1F4DFF"

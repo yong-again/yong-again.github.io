@@ -1,0 +1,58 @@
+{{ define "main" }}
+{{ $ko := eq .Site.Language.Lang "ko" }}
+{{ $catKo := dict "ML" "머신러닝" "Python" "파이썬" "math" "수학" }}
+{{ $catEn := dict "ML" "Machine Learning" "Python" "Python" "math" "Math" }}
+{{ $names := cond $ko $catKo $catEn }}
+
+{{/* 카테고리별 개수 집계 */}}
+{{ $counts := dict }}
+{{ range .RegularPagesRecursive }}
+  {{ $k := index (split .File.Dir "/") 1 }}
+  {{ $prev := int (index $counts $k | default 0) }}
+  {{ $counts = merge $counts (dict $k (add $prev 1)) }}
+{{ end }}
+{{ $total := len .RegularPagesRecursive }}
+
+<main class="wrap">
+  <section class="hub-hero">
+    <p class="eyebrow">Learning Notes · TIL</p>
+    <h1>{{ if $ko }}배운 것들을 정리하는 곳{{ else }}Learning Notes{{ end }}</h1>
+    <p class="lead">{{ if $ko }}머신러닝·파이썬·수학을 공부하며 남긴 기록. 헷갈렸던 개념을 내 언어로 다시 적어 둡니다.{{ else }}Notes from studying ML, Python and math — concepts rewritten in my own words.{{ end }}</p>
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      <input id="searchInput" placeholder="{{ if $ko }}노트 검색 — 예: MSE, 데코레이터, 스케일링{{ else }}Search notes…{{ end }}" aria-label="search">
+    </div>
+    <div class="hub-stats">
+      <div class="s"><div class="n">{{ $total }}</div><div class="l">{{ if $ko }}전체 노트{{ else }}Notes{{ end }}</div></div>
+      <div class="s"><div class="n">{{ len $counts }}</div><div class="l">{{ if $ko }}카테고리{{ else }}Categories{{ end }}</div></div>
+      <div class="s"><div class="n">{{ now.Format "2006" }}</div><div class="l">{{ if $ko }}업데이트{{ else }}Updated{{ end }}</div></div>
+    </div>
+  </section>
+
+  <div class="filters">
+    <button class="pill active" data-f="all">{{ if $ko }}전체{{ else }}All{{ end }} <span class="cnt">{{ $total }}</span></button>
+    {{ range $k, $v := $counts }}
+    <button class="pill" data-f="{{ $k }}">{{ index $names $k | default $k }} <span class="cnt">{{ $v }}</span></button>
+    {{ end }}
+  </div>
+
+  <section class="notes" id="noteGrid">
+    {{ range .RegularPagesRecursive.ByDate.Reverse }}
+      {{ $k := index (split .File.Dir "/") 1 }}
+      {{ $catName := index $names $k | default $k }}
+      {{ $tagStr := "" }}{{ with .Params.tags }}{{ $tagStr = delimit . " " }}{{ end }}
+      {{ $search := printf "%s %s %s" .Title (.Summary | plainify) $tagStr }}
+      <a class="note reveal" href="{{ .RelPermalink }}" data-cat="{{ $k }}" data-search="{{ $search }}">
+        <div class="ntop"><span class="cat-tag">{{ $catName }}</span><span class="rt">{{ .ReadingTime }}{{ if $ko }}분{{ else }} min{{ end }}</span></div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Summary | plainify | truncate 90 }}</p>
+        <div class="meta">
+          <span>{{ .Date.Format "2006.01.02" }}</span>
+          {{ with .Params.tags }}<span class="tags">{{ range first 2 . }}<span>#{{ . }}</span> {{ end }}</span>{{ end }}
+        </div>
+      </a>
+    {{ end }}
+    <div class="empty" id="emptyState" style="display:none">{{ if $ko }}검색 결과가 없습니다.{{ else }}No matching notes.{{ end }}</div>
+  </section>
+</main>
+{{ end }}

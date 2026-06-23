@@ -1,0 +1,49 @@
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+
+buttons:
+- name: All
+  filter: "all"
+- name: Basic
+  filter: "basic"
+- name: Language
+  filter: "language"
+- name: Container
+  filter: "container"
+- name: Others
+  filter: "others"
+
+skills:
+  - name: Python
+    logo: /images/sections/skills/Python.png
+    summary: "Know basic python programming. Used for problem solving and Deep learning pipeline."
+    categories: ["all", "basic", "language"]
+    url: "https://www.python.org/"
+
+  - name: Pytorch
+    logo: /images/sections/skills/PyTorch.png
+    summary: "Used for building and training deep learning models."
+    categories: ["all", "basic"]
+    url: "https://pytorch.org/"
+
+  - name: FastAPI
+    logo: /images/sections/skills/FastAPI.png
+    summary: "Used for building web APIs for machine learning models."
+    categories: ["all", "basic"]
+    url: "https://fastapi.tiangolo.com/"
+
+  - name: Linux
+    logo: /images/sections/skills/linux.png
+    summary: "Comfortable with Linux command line and shell scripting."
+    categories: ["others"]
+    url: "https://www.linux.org/"
+
+  - name: AWS
+    logo: /images/sections/skills/AWS.png
+    summary: "Experience with AWS services like EC2, S3, SageMaker."
+    categories: ["others"]
+    url: "https://aws.amazon.com/"

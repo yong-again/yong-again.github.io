@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main class="wrap" style="padding:40px 0;max-width:760px">
+  <article class="article">
+    <h1>{{ .Title }}</h1>
+    <div class="art-meta"><span>📅 {{ .Date.Format "2006.01.02" }}</span><span>⏱ {{ .ReadingTime }} min</span></div>
+    <div class="article-body">{{ .Content }}</div>
+  </article>
+</main>
+{{ end }}

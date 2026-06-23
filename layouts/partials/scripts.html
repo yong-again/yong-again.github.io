@@ -1,0 +1,89 @@
+<script>
+  /* theme toggle (persisted) */
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeBtn');
+    if(btn) btn.addEventListener('click',function(){
+      var dark=root.getAttribute('data-theme')==='dark';
+      var next=dark?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem('theme',next);}catch(e){}
+    });
+  })();
+
+  /* typed roles in hero */
+  (function(){
+    var el=document.getElementById('typed');
+    if(!el) return;
+    var roles=[];
+    try{roles=JSON.parse(el.getAttribute('data-roles')||'[]');}catch(e){}
+    if(!roles.length) return;
+    var ri=0,ci=0,del=false;
+    (function type(){
+      var w=roles[ri];
+      el.textContent=del?w.slice(0,ci--):w.slice(0,ci++);
+      if(!del&&ci===w.length+1){del=true;return setTimeout(type,1400);}
+      if(del&&ci<0){del=false;ri=(ri+1)%roles.length;ci=0;}
+      setTimeout(type,del?45:85);
+    })();
+  })();
+
+  /* scroll reveal + animate bars */
+  (function(){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          var bars=e.target.querySelectorAll?e.target.querySelectorAll('.bar span'):[];
+          bars.forEach(function(b){b.style.width=b.dataset.w+'%';});
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+
+  /* notes hub: search + category filter */
+  (function(){
+    var grid=document.getElementById('noteGrid');
+    if(!grid) return;
+    var input=document.getElementById('searchInput');
+    var pills=document.querySelectorAll('.pill');
+    var cards=[].slice.call(grid.querySelectorAll('.note'));
+    var curF='all', q='';
+    function apply(){
+      var shown=0;
+      cards.forEach(function(c){
+        var okF=(curF==='all')||(c.dataset.cat===curF);
+        var hay=(c.dataset.search||'').toLowerCase();
+        var okQ=hay.indexOf(q.toLowerCase())>-1;
+        var vis=okF&&okQ; c.style.display=vis?'':'none'; if(vis)shown++;
+      });
+      var empty=document.getElementById('emptyState');
+      if(empty) empty.style.display=shown?'none':'block';
+    }
+    pills.forEach(function(p){p.addEventListener('click',function(){
+      pills.forEach(function(x){x.classList.remove('active');});
+      p.classList.add('active'); curF=p.dataset.f; apply();
+    });});
+    if(input) input.addEventListener('input',function(e){q=e.target.value;apply();});
+  })();
+
+  /* TOC active highlight */
+  (function(){
+    var links=[].slice.call(document.querySelectorAll('.toc a'));
+    if(!links.length) return;
+    var heads=[].slice.call(document.querySelectorAll('.article-body h2, .article-body h3'));
+    window.addEventListener('scroll',function(){
+      var cur=null;
+      heads.forEach(function(h){if(h.getBoundingClientRect().top<140)cur=h;});
+      links.forEach(function(a){a.classList.remove('cur');});
+      if(cur){var m=links.filter(function(a){return a.getAttribute('href')==='#'+cur.id;})[0];if(m)m.classList.add('cur');}
+    });
+  })();
+</script>
+
+{{ if .Site.Params.math }}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+{{ end }}

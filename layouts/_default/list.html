@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main class="wrap" style="padding:60px 0">
+  <div class="sec-head"><span class="idx">/</span><h2>{{ .Title }}</h2></div>
+  <div class="proj-grid">
+    {{ range .Pages }}
+    <a class="proj" href="{{ .RelPermalink }}"><div class="ptop"><h4>{{ .Title }}</h4></div>
+      <p>{{ .Summary | plainify | truncate 100 }}</p></a>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

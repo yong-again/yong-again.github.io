@@ -1,0 +1,63 @@
+{{ define "main" }}
+{{ $ko := eq .Site.Language.Lang "ko" }}
+{{ $catKo := dict "ML" "머신러닝" "Python" "파이썬" "math" "수학" }}
+{{ $catEn := dict "ML" "Machine Learning" "Python" "Python" "math" "Math" }}
+{{ $names := cond $ko $catKo $catEn }}
+{{ $k := index (split .File.Dir "/") 1 }}
+{{ $catName := index $names $k | default $k }}
+{{ $postsURL := "posts/" | relLangURL }}
+
+<main class="wrap">
+  <div class="read-layout">
+    <!-- 사이드바: 같은 카테고리 노트 트리 -->
+    <aside class="tree">
+      <a class="back" href="{{ $postsURL }}">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>{{ if $ko }}전체 노트로{{ else }}All notes{{ end }}</a>
+      {{ $cur := . }}
+      {{ range $key, $val := $names }}
+        {{ $pages := where $.Site.RegularPages.ByTitle "Section" "posts" }}
+        {{ $group := slice }}
+        {{ range $pages }}
+          {{ if eq (index (split .File.Dir "/") 1) $key }}{{ $group = $group | append . }}{{ end }}
+        {{ end }}
+        {{ with $group }}
+          <h4>{{ index $names $key | default $key }}</h4>
+          {{ range . }}
+          <a href="{{ .RelPermalink }}" {{ if eq .RelPermalink $cur.RelPermalink }}class="cur"{{ end }}>{{ .Title }}</a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </aside>
+
+    <!-- 본문 -->
+    <article class="article">
+      <p class="crumb">{{ if $ko }}학습 노트{{ else }}Notes{{ end }} / <b>{{ $catName }}</b></p>
+      <h1>{{ .Title }}</h1>
+      <div class="art-meta">
+        <span>📅 {{ .Date.Format "2006.01.02" }}</span>
+        <span>⏱ {{ .ReadingTime }}{{ if $ko }}분 읽기{{ else }} min read{{ end }}</span>
+        {{ with .Params.tags }}<span>🏷 {{ delimit . " · " }}</span>{{ end }}
+      </div>
+      <div class="article-body">
+        {{ .Content }}
+      </div>
+
+      <!-- 이전 / 다음 -->
+      <div class="pager">
+        {{ with .PrevInSection }}
+        <a class="prev" href="{{ .RelPermalink }}"><div class="lbl">← {{ if $ko }}이전{{ else }}Prev{{ end }}</div><div class="ttl">{{ .Title }}</div></a>
+        {{ else }}<span></span>{{ end }}
+        {{ with .NextInSection }}
+        <a class="next" href="{{ .RelPermalink }}"><div class="lbl">{{ if $ko }}다음{{ else }}Next{{ end }} →</div><div class="ttl">{{ .Title }}</div></a>
+        {{ else }}<span></span>{{ end }}
+      </div>
+    </article>
+
+    <!-- 목차 -->
+    <aside class="toc">
+      <h4>{{ if $ko }}목차{{ else }}On this page{{ end }}</h4>
+      {{ .TableOfContents }}
+    </aside>
+  </div>
+</main>
+{{ end }}
